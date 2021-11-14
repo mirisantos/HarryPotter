@@ -3,10 +3,7 @@
 if ('serviceWorker' in  navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('sw.js')
-        let boton = document.getElementById("btnAcceder")
-        boton.addEventListener('click', () => {
-            fetch('https://www.google.com')
-        })
+       
     })
 }
 
@@ -26,7 +23,7 @@ window.addEventListener("load", function(event) {
   .then(personajes => {
 
     personajes.forEach(per => {
-        console.log("Personaje", per);
+        //console.log("Personaje", per);
         //html+="<div class='col-md-2'><img style='width:200px;max-height:200px' src='"+per.image+"' alt='Imagen'></div>";
        html+= '<div class="col-md-3"> <div class="card card-personaje" >'+
         '<img src="'+per.image+'" class="card-img-top" alt="...">'+
@@ -41,21 +38,7 @@ window.addEventListener("load", function(event) {
 
     element.innerHTML = html;
 
-    /*for (const product of data.products) {
-      let listItem = document.createElement('li');
-      listItem.appendChild(
-        document.createElement('strong')
-      ).textContent = product.Name;
-      listItem.append(
-        ` can be found in ${
-          product.Location
-        }. Cost: `
-      );
-      listItem.appendChild(
-        document.createElement('strong')
-      ).textContent = `£${product.Price}`;
-      myList.appendChild(listItem);
-    }*/
+    
   })
   .catch(console.error);
   /*  fetch(url).then(function(response) {
